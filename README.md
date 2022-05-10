@@ -3,7 +3,7 @@
 - responsive 
 - Main purpose, code review
 - credentials omitted
-- A working version can be demonstrated when requested
+- Working version: https://student-demo-izdqw.mongodbstitch.com
 
 ## Features
 
