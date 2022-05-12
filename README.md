@@ -1,7 +1,7 @@
 # MERN-stack
 
-- responsive 
-- credentials omitted
+- Responsive 
+- Credentials omitted
 - Demo: https://student-demo-izdqw.mongodbstitch.com
 
 ## Features
