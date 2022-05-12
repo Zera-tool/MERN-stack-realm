@@ -1,9 +1,8 @@
 # MERN-stack
 
 - responsive 
-- Main purpose, code review
 - credentials omitted
-- Working version: https://student-demo-izdqw.mongodbstitch.com
+- Demo: https://student-demo-izdqw.mongodbstitch.com
 
 ## Features
 
@@ -15,11 +14,3 @@
 
 - Delete Student affect associated Todos
 - Delete Todos
-
-### Tools
-
-- Sass
-- MongoDB Atlas
-- Express
-- React/Node
-- Axios
