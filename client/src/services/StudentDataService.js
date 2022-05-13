@@ -48,6 +48,15 @@ class StudentDataService {
   updateAllTodos(data) {
     return http.put("/todo/update_by_studentid", data)
   }
+
+  setTodo(data) {
+    return http.put("/todo/set_todo", data)
+  }
+
+  deleteProject(id) {
+    return http.delete(`students/project?id=${id}`)
+  }
+
 }
 
 export default new StudentDataService();

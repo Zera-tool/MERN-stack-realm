@@ -97,13 +97,56 @@ $base-orange: #dd802c;
     height: 70px;
     border-radius: 50%;
   }
+
+  // START: Todos Dashboard
   
   .todo-list-item {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 20px 1fr 35px;
     border-bottom: 1px solid rgb(187, 183, 183);
-    padding: 5px 10px; 
+    padding: 5px; 
   }
+
+  .todo-descr-item {
+    grid-column: 2;
+  }
+
+  .icon-div {
+    grid-column: 3;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .check-icon, .check-icon-done {
+    grid-column: 1;
+    border: 1px solid lightgrey;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    :hover {
+      color: $base-orange;
+    }
+  }
+
+  .check-icon-done {
+    background-color: $base-blue;
+    border: 1px solid $base-blue;
+    color: white;
+    :hover {
+      color: white;
+    }
+  }
+
+  .todo-done {
+    color: gray;
+    text-decoration: line-through;
+  }
+
+  // END: Todos Dashboard
   
   .select-studentprojects {
     color: $base-orange;
@@ -164,12 +207,6 @@ $base-orange: #dd802c;
     font-size: 1.2em;
   }
   
-  .icon-div {
-    display: flex;
-    flex-direction: row;
-    padding-left: 5px;
-  }
-  
   .delete-student-icon {
     font-size: 1.8em;
     color: $base-blue;
@@ -178,7 +215,7 @@ $base-orange: #dd802c;
     margin-bottom: 20px;
   }
 
-  .add-student-icon {
+  .add-icon {
     font-size: 2em;
     color: $base-blue !important;
     margin: 0 auto;

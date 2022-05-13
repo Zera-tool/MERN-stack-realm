@@ -119,14 +119,62 @@ header .nav-header a:hover {
 }
 
 .todo-list-item {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -ms-grid-columns: 20px 1fr 35px;
+      grid-template-columns: 20px 1fr 35px;
+  border-bottom: 1px solid #bbb7b7;
+  padding: 5px;
+}
+
+.todo-descr-item {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.icon-div {
+  -ms-grid-column: 3;
+  grid-column: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  border-bottom: 1px solid #bbb7b7;
-  padding: 5px 10px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.check-icon, .check-icon-done {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  border: 1px solid lightgrey;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.check-icon :hover, .check-icon-done :hover {
+  color: #dd802c;
+}
+
+.check-icon-done {
+  background-color: #388895;
+  border: 1px solid #388895;
+  color: white;
+}
+
+.check-icon-done :hover {
+  color: white;
+}
+
+.todo-done {
+  color: gray;
+  text-decoration: line-through;
 }
 
 .select-studentprojects {
@@ -205,17 +253,6 @@ header .nav-header a:hover {
   font-size: 1.2em;
 }
 
-.icon-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  padding-left: 5px;
-}
-
 .delete-student-icon {
   font-size: 1.8em;
   color: #388895;
@@ -224,7 +261,7 @@ header .nav-header a:hover {
   margin-bottom: 20px;
 }
 
-.add-student-icon {
+.add-icon {
   font-size: 2em;
   color: #388895 !important;
   margin: 0 auto;

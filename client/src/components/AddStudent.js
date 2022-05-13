@@ -64,15 +64,12 @@ const AddStudent = () => {
               .catch(e => {
                 console.log(e);
               });            
-            // if(location.state.first_name !== state.first_name ||
-            //     location.state.tussenvoegsel !== state.tussenvoegsel ||
-            //     location.state.last_name !== state.last_name) {  
-                    const todo = {
-                        student_id: state._id,
-                        first_name: state.first_name,
-                        tussenvoegsel: state.tussenvoegsel,
-                        last_name: state.last_name
-                    }      
+                const todo = {
+                    student_id: state._id,
+                    first_name: state.first_name,
+                    tussenvoegsel: state.tussenvoegsel,
+                    last_name: state.last_name
+                }      
                 await StudentDataService.updateAllTodos(todo)
                     .then(response => {
                         setSubmitted(true);
@@ -82,7 +79,6 @@ const AddStudent = () => {
                         console.log(e);
                         setIsLoading(false)
                     });
-                // }
             } else {
                 event.preventDefault();
                 StudentDataService.createStudent(state)
@@ -101,21 +97,20 @@ const AddStudent = () => {
         let studentId = location.state.currentStudent._id
         setIsLoading(true)
         StudentDataService.deleteStudent(studentId)
-          .then(response => {
+        .then(response => {
           })
-          .catch(e => {
+        .catch(e => {
             console.log(e);
           });
-
-          StudentDataService.deleteAllTodos(studentId)
-          .then(response => {
+        StudentDataService.deleteAllTodos(studentId)
+        .then(response => {
             setSubmitted(true)
             setIsLoading(false)
-          })
-          .catch(e => {
+        })
+        .catch(e => {
             console.log(e);
             setIsLoading(false)
-          });
+        });
       };
 
     return( 

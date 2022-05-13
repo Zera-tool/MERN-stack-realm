@@ -72,7 +72,7 @@ const StudentList = () => {
   return (
     <div className="student-list-container">
       <h2>Students</h2>
-        <NavLink to="../addstudent" className="add-student-icon">
+        <NavLink to="../addstudent" className="add-icon">
             <FontAwesomeIcon icon={faCirclePlus} />
         </NavLink>
         <div className="sort-list">

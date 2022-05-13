@@ -1,4 +1,17 @@
+import StudentDataService from "../../services/StudentDataService";
+
 const StudentProjects = ({ data }) => {
+
+  // const deleteStudentProject = (projectId) => {
+  //   StudentDataService.deleteProject(projectId)
+  //     .then(response => {
+  //       console.log(response)
+  //     })
+  //     .catch(e => {
+  //       console.log(e)
+  //     });
+  // }
+  
     
     return (
         <> 
