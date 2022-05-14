@@ -8,7 +8,6 @@ const StudentInfo = ({studentProfile}) => {
         phonenumber, 
         instrument, 
         background,
-        _id
     } = studentProfile
 
     return (
@@ -18,7 +17,6 @@ const StudentInfo = ({studentProfile}) => {
             <div>Mail: {email}</div>
             <div>Instrument: {instrument}</div>
             <div>Background: {background}</div>
-            <div>ID: {_id}</div>
         </>
     )
 }

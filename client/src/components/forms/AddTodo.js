@@ -1,20 +1,23 @@
 import { useLocation } from "react-router";
 import { useState, useReducer, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import StudentDataService from "../services/StudentDataService";
-import LoadingSpinner from "./common/LoadingSpinner";
+import StudentDataService from "../../services/StudentDataService";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 const AddTodo = () => {
 
   const [ studentNames, setStudentNames ] = useState([])
   const [ students, setStudents ] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [ isLoading, setIsLoading ] = useState(false);
+
+  const location = useLocation();
+  let editing = false;
 
   const retrieveStudents = () => {
     StudentDataService.getAll()
       .then(response => {
-        setStudents(response.data);
-        
+        // setStudents(response.data.students)
+        setStudents(response.data)
       })
       .catch(e => {
         console.log(e);
@@ -44,9 +47,6 @@ const AddTodo = () => {
   useEffect(() => {
     setStudentNames(studentNamesList());
   }, [students]);
-
-  const location = useLocation();
-  let editing = false;
 
     let initialState = {
         descr: '',
@@ -87,8 +87,7 @@ const AddTodo = () => {
             descr: descr,
         }
         StudentDataService.updateTodo(data)
-          .then(response => {
-            // console.log(response)
+          .then(() => {
             setIsLoading(false);
             setSubmitted(true);
           })
@@ -100,6 +99,7 @@ const AddTodo = () => {
         event.preventDefault();
         if(state.studentId === null || state.studentId === "general"){
           setValid(false)
+          setIsLoading(false)
           return
         }
         let split = state.studentId.split(",")
@@ -110,8 +110,7 @@ const AddTodo = () => {
           };
           setIsLoading(true);
         StudentDataService.createTodo(data)
-        .then(response => {
-          // console.log(response)
+        .then(() => {
           setIsLoading(false);
           setSubmitted(true);
           setValid(true)
@@ -125,18 +124,17 @@ const AddTodo = () => {
 
     return(
       <> 
-      {editing ? <h2>Edit Todo</h2> : <h2>New Todo</h2>}
-      {valid ? null : <h2><span className="warning">Please select a student</span></h2>}
-
-      {isLoading ? <div className="loading-container"><LoadingSpinner /></div> : 
+        {editing ? <h2>Edit Todo</h2> : <h2>New Todo</h2>}
+        {valid ? null : <h2><span className="warning">Please select a student</span></h2>}
+        {isLoading ? <div className="loading-container"><LoadingSpinner /></div> : 
           submitted ? (
-        <div className="submitted-container">
-          <h4>You submitted successfully!</h4>
-          <NavLink to={"/dashboard"} >
-            <button>Back to Dashboard</button>
-          </NavLink>
-        </div>
-        ) : (
+            <div className="submitted-container">
+              <h4>You submitted successfully!</h4>
+              <NavLink to={"/dashboard"} >
+                <button>Back to Dashboard</button>
+              </NavLink>
+            </div>
+          ) : (
             <form className="add-student-form todo-form" onSubmit={handleSubmit}>
               {initialState.studentName ? <div className="name-field">{initialState.studentName}</div> :
                 <select name="studentId" onChange={onChange} required>
@@ -160,7 +158,7 @@ const AddTodo = () => {
                 </NavLink>  
               </div>    
             </form>
-        )}
+          )}
       </>
     )
 }

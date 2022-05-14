@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/common/Header';
 import Homepage from './components/Homepage';
-import Dashboard from './components/Dashboard';
-import StudentProfile from './components/displaystudent/StudentProfile';
-import StudentList from './components/StudentList';
-import AddStudent from './components/AddStudent';
-import AddTodo from './components/AddTodo';
+import Dashboard from './components/dashboard/Dashboard';
+import StudentProfile from './components/studentprofile/StudentProfile';
+import StudentList from './components/studentlist/StudentList';
+import AddStudent from './components/forms/AddStudent';
+import AddTodo from './components/forms/AddTodo';
 
 function App() {
 

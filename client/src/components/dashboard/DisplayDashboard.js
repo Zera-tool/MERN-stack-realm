@@ -1,66 +1,18 @@
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCirclePlus, faTrashAlt, faPenToSquare, faCheck, faEllipsis } from '@fortawesome/free-solid-svg-icons'
-import { useState, useEffect } from "react";
-import StudentDataService from "../services/StudentDataService";
-import LoadingSpinner from "./common/LoadingSpinner";
+import LoadingSpinner from "../common/LoadingSpinner";
 
-const Dashboard = () => {
-
-    const [ todos, setTodos ] = useState([]);
-    const [ isLoading, setIsLoading ] = useState(false);
-    const [ editIcons, setEditIcons ] = useState(false)
-
-    useEffect(() => {
-        retrieveTodos();
-      }, []);
-  
-      const retrieveTodos = () => {
-        setIsLoading(true);
-        StudentDataService.getAllTodos()
-          .then(response => {
-            setTodos(response.data);
-            setIsLoading(false)
-          })
-          .catch(e => {
-            setIsLoading(false)
-            console.log(e);
-          });
-      };
-
-      const deleteTodo = (todoId) => {
-        setIsLoading(true);
-        StudentDataService.deleteTodo(todoId)
-          .then(response => {
-            retrieveTodos();
-            setIsLoading(false)
-            setEditIcons(false)
-          })
-          .catch(e => {
-            console.log(e);
-            setIsLoading(false)
-          });
-      };
-
-      const setTodo = (todoId, active) => {
-        setIsLoading(true)
-        const todo = {
-          todoId,
-          active: !active
-        }
-        StudentDataService.setTodo(todo)
-          .then(response => {
-            retrieveTodos();
-            setIsLoading(false)
-          })
-          .catch(e => {
-            console.log(e);
-            setIsLoading(false)
-          });
-      }
-
-    return (
-      <div className="student-list-container">
+const DisplayDashboard = ({
+    todos,
+    editIcons,
+    setEditIcons,
+    setTodo,
+    isLoading,
+    deleteTodo
+}) => {
+    return(
+        <div className="student-list-container">
           <h2>Dashboard</h2>
           <NavLink to="../addtodo" className="add-icon">
             <FontAwesomeIcon icon={faCirclePlus} />
@@ -126,4 +78,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+export default DisplayDashboard

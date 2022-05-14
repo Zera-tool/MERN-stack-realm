@@ -242,7 +242,7 @@ header .nav-header a:hover {
 }
 
 .warning {
-  color: #388895;
+  color: red;
 }
 
 .name-field {

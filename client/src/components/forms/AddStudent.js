@@ -1,10 +1,10 @@
 import { useLocation } from "react-router";
 import { useReducer, useState } from "react";
 import { NavLink } from "react-router-dom";
-import StudentDataService from "../services/StudentDataService";
+import StudentDataService from "../../services/StudentDataService";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import LoadingSpinner from "./common/LoadingSpinner";
+import LoadingSpinner from "../common/LoadingSpinner";
 
 const AddStudent = () => {
 
