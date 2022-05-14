@@ -44,7 +44,8 @@ const StudentList = () => {
     setIsLoading(true);
     StudentDataService.getAll()
       .then(response => {
-        setStudents(response.data);
+        setStudents(response.data.students);
+        // setStudents(response.data)
         setIsLoading(false)        
       })
       .catch(e => {
