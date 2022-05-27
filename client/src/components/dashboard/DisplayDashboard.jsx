@@ -19,19 +19,19 @@ const DisplayDashboard = ({
 }) => {
   return (
     <>
-      <div className="page-header-container">
-        <h2>Dashboard</h2>
-        <NavLink to="../addtodo" className="add-icon">
-          <FontAwesomeIcon icon={faCirclePlus} />
-        </NavLink>
-        <div className="icon-div">
-          <a onClick={() => setEditIcons(!editIcons)}>
-            <FontAwesomeIcon icon={faEllipsis} size={"2x"} />
-          </a>
-        </div>
-      </div>
       <div className="student-list-container">
         <div className="gridbox">
+          <div className="page-header-container">
+            <h2>Dashboard</h2>
+            <NavLink to="../addtodo" className="add-icon">
+              <FontAwesomeIcon icon={faCirclePlus} />
+            </NavLink>
+          </div>
+          <div className="icon-div">
+            <a onClick={() => setEditIcons(!editIcons)}>
+              <FontAwesomeIcon icon={faEllipsis} size={"2x"} />
+            </a>
+          </div>
           {isLoading ? (
             <div className="loading-container">
               <LoadingSpinner />

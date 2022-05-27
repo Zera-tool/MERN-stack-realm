@@ -15,8 +15,8 @@ const AddTodo = () => {
   const retrieveStudents = () => {
     StudentDataService.getAll()
       .then((response) => {
-        setStudents(response.data.students);
-        // setStudents(response.data)
+        // setStudents(response.data.students);
+        setStudents(response.data);
       })
       .catch((e) => {
         console.log(e);

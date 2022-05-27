@@ -12,25 +12,25 @@ const DisplayStudentList = ({
 }) => {
   return (
     <>
-      <div className="page-header-container">
-        <h2>Students</h2>
-        <NavLink to="../addstudent" className="add-icon">
-          <FontAwesomeIcon icon={faCirclePlus} />
-        </NavLink>
-      </div>
       <div className="student-list-container">
-        <div className="sort-list">
-          <div onClick={() => requestSort("first_name")}>
-            First Name {getIcon("first_name")}
-          </div>
-          <div onClick={() => requestSort("last_name")}>
-            Last Name {getIcon("last_name")}
-          </div>
-          <div onClick={() => requestSort("instrument")}>
-            Instrument {getIcon("instrument")}
-          </div>
-        </div>
         <div className="gridbox">
+          <div className="page-header-container">
+            <h2>Students</h2>
+            <NavLink to="../addstudent" className="add-icon">
+              <FontAwesomeIcon icon={faCirclePlus} />
+            </NavLink>
+          </div>
+          <div className="sort-list">
+            <div onClick={() => requestSort("first_name")}>
+              First Name {getIcon("first_name")}
+            </div>
+            <div onClick={() => requestSort("last_name")}>
+              Last Name {getIcon("last_name")}
+            </div>
+            <div onClick={() => requestSort("instrument")}>
+              Instrument {getIcon("instrument")}
+            </div>
+          </div>
           {isLoading ? (
             <div className="loading-container">
               <LoadingSpinner />

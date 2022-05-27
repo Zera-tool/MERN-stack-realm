@@ -4,17 +4,7 @@
   font-family: "Raleway", sans-serif;
 }
 
-body {
-  background-image: url(./components/common/images/main-bg.jpg);
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
 .body-div {
-  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-          box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   min-height: 100vh;
   background-color: white;
 }
@@ -25,16 +15,16 @@ h1 {
 }
 
 h2 {
-  color: #dd802c;
-  font-size: 1.4em;
-  font-weight: bolder;
+  color: #f59a2c;
+  font-size: 1.7em;
+  font-weight: bold;
   padding: 15px 0;
   text-align: center;
 }
 
 h3 {
   text-align: center;
-  color: #388895;
+  color: #215b6e;
   font-size: 1em;
 }
 
@@ -54,7 +44,7 @@ a:visited {
 a:hover,
 a:active:hover,
 a:visited:hover {
-  color: #dd802c;
+  color: #f59a2c;
 }
 
 button {
@@ -102,7 +92,7 @@ button {
 
 header {
   height: 75px;
-  background-color: #388895;
+  background-color: #215b6e;
   text-align: center;
   padding-top: 20px;
 }
@@ -159,10 +149,7 @@ header .nav-header a:hover {
 }
 
 .icon-div {
-  -ms-grid-column: 2;
-  grid-column: 2;
   text-align: right;
-  margin-right: 10px;
 }
 
 .check-icon,
@@ -180,12 +167,12 @@ header .nav-header a:hover {
 
 .check-icon :hover,
 .check-icon-done :hover {
-  color: #dd802c;
+  color: #f59a2c;
 }
 
 .check-icon-done {
-  background-color: #388895;
-  border: 1px solid #388895;
+  background-color: #215b6e;
+  border: 1px solid #215b6e;
   color: white;
 }
 
@@ -199,7 +186,7 @@ header .nav-header a:hover {
 }
 
 .select-studentprojects {
-  color: #dd802c;
+  color: #f59a2c;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,7 +204,7 @@ header .nav-header a:hover {
           box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  color: #388895;
+  color: #215b6e;
 }
 
 .select-studentprojects > label {
@@ -256,8 +243,7 @@ header .nav-header a:hover {
       grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
   cursor: pointer;
-  font-size: 0.8em;
-  background-color: white;
+  font-size: 0.9em;
 }
 
 .additional-info {
@@ -270,7 +256,7 @@ header .nav-header a:hover {
 }
 
 .name-field {
-  color: #388895;
+  color: #215b6e;
   width: 100%;
   text-align: center;
   padding: 10px;
@@ -279,7 +265,7 @@ header .nav-header a:hover {
 
 .delete-student-icon {
   font-size: 1.8em;
-  color: #388895;
+  color: #215b6e;
   text-align: center;
   padding: 10px;
   margin-bottom: 20px;
@@ -287,10 +273,11 @@ header .nav-header a:hover {
 
 .add-icon {
   font-size: 2em;
-  color: #388895 !important;
+  color: #215b6e !important;
   margin: 0 auto;
   margin-bottom: 20px;
   background-color: white;
+  text-align: center;
 }
 
 .form-container {
@@ -327,7 +314,7 @@ textarea:valid + .form-input-label {
   top: 0;
   font-size: 0.9375rem;
   margin-bottom: 32px;
-  color: #388895;
+  color: #215b6e;
 }
 
 textarea {
@@ -340,7 +327,7 @@ textarea {
   left: 0.875rem;
   font-size: 1em;
   line-height: 147.6%;
-  color: #dd802c;
+  color: #f59a2c;
   -webkit-transition: top 0.2s;
   transition: top 0.2s;
 }
@@ -385,6 +372,15 @@ textarea {
     display: grid;
     -ms-grid-columns: 1fr 55% 1fr;
         grid-template-columns: 1fr 55% 1fr;
+    background-image: url(./components/common/images/main-bg2.webp);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  .body-div {
+    -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   }
   body > * {
     -ms-grid-column: 2;
@@ -412,12 +408,17 @@ textarea {
     display: grid;
     -ms-grid-columns: 1fr 70% 1fr;
         grid-template-columns: 1fr 70% 1fr;
-    min-height: 100vh;
-    background-color: white;
   }
   .gridbox > * {
     -ms-grid-column: 2;
     grid-column: 2;
+  }
+}
+
+@media (min-width: 1700px) {
+  body {
+    -ms-grid-columns: 1fr 45% 1fr;
+        grid-template-columns: 1fr 45% 1fr;
   }
 }
 /*# sourceMappingURL=index.css.map */
