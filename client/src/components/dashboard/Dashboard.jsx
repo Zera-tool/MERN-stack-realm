@@ -16,8 +16,8 @@ const Dashboard = () => {
         setIsLoading(true);
         StudentDataService.getAllTodos()
           .then(response => {
-            // setTodos(response.data.todos)
-            setTodos(response.data)
+            setTodos(response.data.todos)
+            // setTodos(response.data)
             setIsLoading(false)
           })
           .catch(e => {

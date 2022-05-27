@@ -1,4 +1,4 @@
-import http from "../http-common.js";
+import http from "../http-common";
 
 class StudentDataService {
   getAll() {
@@ -6,12 +6,12 @@ class StudentDataService {
   }
 
   get(id) {
-      return http.get(`students/id?id=${id.toString()}`);
+    return http.get(`students/id?id=${id.toString()}`);
   }
 
   find(query, by = "name", page = 0) {
     return http.get(`students?${by}=${query}&page=${page}`);
-  } 
+  }
 
   createStudent(data) {
     return http.post("students", data);
@@ -26,7 +26,7 @@ class StudentDataService {
   }
 
   getAllTodos() {
-    return http.get(`students/todo`)
+    return http.get(`students/todo`);
   }
 
   createTodo(data) {
@@ -46,17 +46,16 @@ class StudentDataService {
   }
 
   updateAllTodos(data) {
-    return http.put("/todo/update_by_studentid", data)
+    return http.put("/todo/update_by_studentid", data);
   }
 
   setTodo(data) {
-    return http.put("/todo/set_todo", data)
+    return http.put("/todo/set_todo", data);
   }
 
   deleteProject(id) {
-    return http.delete(`students/project?id=${id}`)
+    return http.delete(`students/project?id=${id}`);
   }
-
 }
 
 export default new StudentDataService();

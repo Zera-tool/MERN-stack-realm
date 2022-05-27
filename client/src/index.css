@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 h1 {
@@ -14,7 +14,8 @@ h2 {
   color: #dd802c;
   font-size: 1.4em;
   font-weight: bolder;
-  margin: 15px 0;
+  padding: 15px 0;
+  background-color: white;
 }
 
 h3 {
@@ -23,13 +24,17 @@ h3 {
   font-size: 1em;
 }
 
-a, a:active, a:visited {
+a,
+a:active,
+a:visited {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
 }
 
-a:hover, a:active:hover, a:visited:hover {
+a:hover,
+a:active:hover,
+a:visited:hover {
   color: #dd802c;
 }
 
@@ -100,10 +105,11 @@ header .nav-header a:hover {
   -webkit-column-gap: 15px;
           column-gap: 15px;
   padding: 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   margin: 10px;
   border-radius: 5px;
+  background-color: white;
 }
 
 .student-profile {
@@ -112,7 +118,8 @@ header .nav-header a:hover {
   text-align: center;
 }
 
-.student-profile > img, .student-list > img {
+.student-profile > img,
+.student-list > img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -146,7 +153,8 @@ header .nav-header a:hover {
           flex-direction: row;
 }
 
-.check-icon, .check-icon-done {
+.check-icon,
+.check-icon-done {
   -ms-grid-column: 1;
   grid-column: 1;
   border: 1px solid lightgrey;
@@ -158,7 +166,8 @@ header .nav-header a:hover {
   cursor: pointer;
 }
 
-.check-icon :hover, .check-icon-done :hover {
+.check-icon :hover,
+.check-icon-done :hover {
   color: #dd802c;
 }
 
@@ -216,7 +225,9 @@ header .nav-header a:hover {
   font-size: 0.9em;
 }
 
-.student-list-container, .add-student-form, .add-item-form {
+.student-list-container,
+.add-student-form,
+.add-item-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,6 +245,7 @@ header .nav-header a:hover {
   text-align: center;
   cursor: pointer;
   font-size: 0.8em;
+  background-color: white;
 }
 
 .additional-info {
@@ -272,7 +284,8 @@ header .nav-header a:hover {
   position: relative;
 }
 
-input, textarea {
+input,
+textarea {
   border: none;
   border-bottom: 1px dotted rgba(19, 19, 21, 0.6);
   width: 95%;
@@ -284,15 +297,20 @@ input, textarea {
   padding-bottom: 0.5rem;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
 }
 
-input:hover, textarea:hover {
+input:hover,
+textarea:hover {
   background: #eef1f2;
 }
 
-input:focus + .form-input-label, input:valid + .form-input-label, textarea:focus + .form-input-label, textarea:valid + .form-input-label {
+input:focus + .form-input-label,
+input:valid + .form-input-label,
+textarea:focus + .form-input-label,
+textarea:valid + .form-input-label {
   top: 0;
   font-size: 0.9375rem;
   margin-bottom: 32px;
@@ -310,8 +328,8 @@ textarea {
   font-size: 1em;
   line-height: 147.6%;
   color: #dd802c;
-  -webkit-transition: top .2s;
-  transition: top .2s;
+  -webkit-transition: top 0.2s;
+  transition: top 0.2s;
 }
 
 @-webkit-keyframes spinner {
@@ -354,14 +372,15 @@ textarea {
     display: grid;
     -ms-grid-columns: 1fr 55% 1fr;
         grid-template-columns: 1fr 55% 1fr;
+    background-image: url(./components/common/images/main-bg.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   body > * {
     -ms-grid-column: 2;
     grid-column: 2;
-  }
-  header {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
   }
   .add-student-form {
     display: -ms-grid;
@@ -385,6 +404,8 @@ textarea {
     display: grid;
     -ms-grid-columns: 1fr 70% 1fr;
         grid-template-columns: 1fr 70% 1fr;
+    background: rgba(255, 255, 255, 0.7);
+    min-height: 100vh;
   }
   .gridbox > * {
     -ms-grid-column: 2;
