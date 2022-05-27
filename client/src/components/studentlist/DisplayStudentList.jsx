@@ -12,11 +12,13 @@ const DisplayStudentList = ({
 }) => {
   return (
     <>
-      <h2>Students</h2>
-      <div className="student-list-container">
+      <div className="page-header-container">
+        <h2>Students</h2>
         <NavLink to="../addstudent" className="add-icon">
           <FontAwesomeIcon icon={faCirclePlus} />
         </NavLink>
+      </div>
+      <div className="student-list-container">
         <div className="sort-list">
           <div onClick={() => requestSort("first_name")}>
             First Name {getIcon("first_name")}

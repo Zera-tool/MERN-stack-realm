@@ -7,24 +7,43 @@ $base-orange: #dd802c;
   font-family: "Raleway", sans-serif;
 }
 
+body {
+  background-image: url(./components/common/images/main-bg.jpg);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.body-div {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  min-height: 100vh;
+  background-color: white;
+}
+
 h1 {
   font-size: 1.8em;
   color: white;
 }
 
 h2 {
-  text-align: center;
   color: $base-orange;
   font-size: 1.4em;
   font-weight: bolder;
   padding: 15px 0;
-  background-color: white;
+  text-align: center;
 }
 
 h3 {
   text-align: center;
   color: $base-blue;
   font-size: 1em;
+}
+
+.page-header-container {
+  background-color: white;
+  text-align: center;
 }
 
 a,
@@ -71,7 +90,6 @@ header {
   background-color: $base-blue;
   text-align: center;
   padding-top: 20px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   .nav-header {
     font-size: 1.1em;
     a:hover {
@@ -84,7 +102,7 @@ header {
   display: flex;
   column-gap: 15px;
   padding: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   margin: 10px;
   border-radius: 5px;
   background-color: white;
@@ -118,9 +136,9 @@ header {
 }
 
 .icon-div {
-  grid-column: 3;
-  display: flex;
-  flex-direction: row;
+  grid-column: 2;
+  text-align: right;
+  margin-right: 10px;
 }
 
 .check-icon,
@@ -229,6 +247,7 @@ header {
   color: $base-blue !important;
   margin: 0 auto;
   margin-bottom: 20px;
+  background-color: white;
 }
 
 .form-container {
@@ -296,11 +315,6 @@ textarea {
   body {
     display: grid;
     grid-template-columns: 1fr 55% 1fr;
-    background-image: url(./components/common/images/main-bg.jpg);
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
   }
   body > * {
     grid-column: 2;
@@ -321,8 +335,9 @@ textarea {
   .gridbox {
     display: grid;
     grid-template-columns: 1fr 70% 1fr;
-    background: rgba(255, 255, 255, 0.7);
+    // background: rgba(255, 255, 255, 0.7);
     min-height: 100vh;
+    background-color: white;
   }
 
   .gridbox > * {
