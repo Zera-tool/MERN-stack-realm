@@ -1,5 +1,5 @@
 $base-blue: #215b6e;
-$base-orange: #f59a2c;
+$base-orange: #f39523;
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@ $base-orange: #f59a2c;
 }
 
 h1 {
-  font-size: 1.8em;
+  font-size: 2.2em;
   color: white;
 }
 
@@ -32,8 +32,14 @@ h3 {
 }
 
 .page-header-container {
-  background-color: white;
   text-align: center;
+  padding-bottom: 20px;
+}
+
+.gridbox {
+  > .icon-div {
+    padding-right: 5px;
+  }
 }
 
 a,
@@ -76,15 +82,16 @@ button {
 }
 
 header {
-  height: 75px;
   background-color: $base-blue;
   text-align: center;
-  padding-top: 20px;
-  .nav-header {
+  padding: 20px 0;
+  border-bottom: 4px solid $base-orange;
+  nav {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
     font-size: 1.1em;
-    a:hover {
-      color: white;
-    }
   }
 }
 
@@ -202,6 +209,10 @@ header {
   text-align: center;
   cursor: pointer;
   font-size: 0.9em;
+  margin: 5px 10px;
+  padding: 5px 0;
+  background-color: #f39523;
+  border-radius: 25px;
 }
 
 .additional-info {
@@ -210,7 +221,7 @@ header {
 }
 
 .warning {
-  color: red;
+  color: #f39523;
 }
 
 .name-field {
@@ -232,8 +243,6 @@ header {
 .add-icon {
   font-size: 2em;
   color: $base-blue !important;
-  margin: 0 auto;
-  margin-bottom: 20px;
   background-color: white;
   text-align: center;
 }
@@ -293,8 +302,8 @@ textarea {
 .loading-spinner {
   width: 50px;
   height: 50px;
-  border: 10px solid #f3f3f3; /* Light grey */
-  border-top: 10px solid #383636; /* Black */
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid $base-blue;
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
 }
@@ -303,18 +312,26 @@ textarea {
   body {
     display: grid;
     grid-template-columns: 1fr 55% 1fr;
-    background-image: url(./components/common/images/main-bg2.webp);
+    background-image: url(./components/common/images/main-bg.webp);
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
   .body-div {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    // box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    //   rgba(0, 0, 0, 0.22) 0px 10px 10px;
   }
   body > * {
     grid-column: 2;
+  }
+  header {
+    padding: 35px;
+  }
+  nav:hover {
+    color: #f59a2c;
   }
   .add-student-form {
     display: grid;

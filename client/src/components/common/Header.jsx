@@ -4,10 +4,31 @@ const Header = () => {
   return (
     <header>
       <h1>Demo Info System</h1>
-      <nav className="nav-header">
-        <NavLink to="/">Home</NavLink> |
-        <NavLink to="students">&nbsp;Students</NavLink> |
-        <NavLink to="dashboard">&nbsp;Dashboard</NavLink>
+      <nav>
+        <NavLink
+          to="/"
+          style={({ isActive }) => ({
+            color: isActive ? "#fff" : "#a7a9ac",
+          })}
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="students"
+          style={({ isActive }) => ({
+            color: isActive ? "#fff" : "#a7a9ac",
+          })}
+        >
+          Students
+        </NavLink>
+        <NavLink
+          to="dashboard"
+          style={({ isActive }) => ({
+            color: isActive ? "#fff" : "#a7a9ac",
+          })}
+        >
+          Dashboard
+        </NavLink>
       </nav>
     </header>
   );
